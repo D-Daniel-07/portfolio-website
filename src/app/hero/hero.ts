@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface NavItem {
   name: string;
@@ -8,6 +9,7 @@ interface NavItem {
 @Component({
   selector: 'app-hero',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
