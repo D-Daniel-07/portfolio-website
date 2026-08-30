@@ -1,15 +1,13 @@
 import { Routes } from '@angular/router';
 
-import { Hero } from './hero/hero';
-import { About } from './about/about';
-
 export const routes: Routes = [
   {
     path: '',
-    component: Hero,
+    pathMatch: 'full',
+    loadComponent: () => import('./hero/hero').then((m) => m.Hero),
   },
   {
     path: 'about',
-    component: About,
+    loadComponent: () => import('./about/about').then((m) => m.About),
   },
 ];
